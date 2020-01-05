@@ -1,11 +1,10 @@
 !/bin/bash
 ################################################################################
-# Script for Installation: ODOO 9.0 Community server on Ubuntu 14.04 LTS
-# Author: André Schenkels, ICTSTUDIO 2015
+
 #-------------------------------------------------------------------------------
 #  
 # This script will install ODOO Server on
-# clean Ubuntu 14.04 Server
+# clean Ubuntu 18.04 Server
 #-------------------------------------------------------------------------------
 # USAGE:
 #
@@ -20,7 +19,6 @@ OE_USER="odoo"
 OE_HOME="/opt/$OE_USER"
 OE_HOME_EXT="/opt/$OE_USER/$OE_USER-server"
 
-#Enter version for checkout "9.0" for version 9.0,"8.0" for version 8.0, "7.0 (version 7), "master" for trunk
 OE_VERSION="9.0"
 
 #set the superadmin password
@@ -33,15 +31,15 @@ OE_CONFIG="$OE_USER-server"
 echo -e "\n---- Update Server ----"
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install -y locales
+#sudo apt-get install -y locales
 
 #--------------------------------------------------
 # Install PostgreSQL Server
 #--------------------------------------------------
-sudo export LANGUAGE=en_US.UTF-8
-sudo export LANG=en_US.UTF-8
-sudo export LC_ALL=en_US.UTF-8
-sudo locale-gen en_US.UTF-8
+#sudo export LANGUAGE=en_US.UTF-8
+#sudo export LANG=en_US.UTF-8
+#sudo export LC_ALL=en_US.UTF-8
+#sudo locale-gen en_US.UTF-8
 sudo dpkg-reconfigure locales
 
 echo -e "\n---- Install PostgreSQL Server ----"
